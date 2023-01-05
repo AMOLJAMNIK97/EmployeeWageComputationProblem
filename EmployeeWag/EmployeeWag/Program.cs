@@ -8,29 +8,30 @@ namespace EmployeeWag
 {
     class Program
     {
+        public const int fullTime = 1;
+        public const int PartTime = 2;
+        public const int EmpRatePerHour = 20;
         static void Main(string[] args)
         {
-            int fullTime = 1, PartTime = 2, EmpRatePerHour = 20, empHrs = 0, empWage = 0;
+            int empHrs = 0;
+            int empWage = 0;
             Random randobj = new Random();
             int checkPresent = randobj.Next(0, 3);
             Console.WriteLine("Random number=" + checkPresent);
-            if (checkPresent == fullTime)
+            switch (checkPresent)
             {
-                empHrs = 8;
-                Console.WriteLine("Employee Is Present");
-            }
-            else if (checkPresent == PartTime)
-            {
-                empHrs = 4;
-                Console.WriteLine("Employee is part time");
-            }
-            else
-            {
-                empHrs = 0;
-                Console.WriteLine("Employee Is Absent");
+                case PartTime:
+                    empHrs = 4;
+                    break;
+                case fullTime:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * EmpRatePerHour;
-            Console.WriteLine("Employee Wage:" + empWage);
+            Console.WriteLine("Emp Wage :" + empWage);
         }
      }
 }
