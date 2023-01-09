@@ -8,19 +8,22 @@ namespace EmployeeWag
 {
     class Program
     {
-
         public const int fullTime = 1;
         public const int PartTime = 2;
         public const int EmpRatePerHour = 20;
         public const int NumOf_Working_day = 20;
+        public const int Working_Hrs_Month = 100;
+
 
         static void Main(string[] args)
         {
             int empHrs = 0;
             int empWage = 0;
             int TotalEmpWage = 0;
-            for (int day = 0; day < NumOf_Working_day; day++)
+            int TotalEmpHrs = 0;
+            while (TotalEmpHrs <= Working_Hrs_Month && TotalEmpWage < NumOf_Working_day)
             {
+                TotalEmpWage++;
                 Random randobj = new Random();
                 int checkPresent = randobj.Next(0, 3);
                 Console.WriteLine("Random number=" + checkPresent);
@@ -36,11 +39,12 @@ namespace EmployeeWag
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * EmpRatePerHour;
-                TotalEmpWage += empWage;
-                Console.WriteLine("Employee Wage:" + empWage);
+                TotalEmpHrs += empHrs;
+
+                Console.WriteLine("Day :" + TotalEmpWage + "Employee Hrs:" + empHrs);
             }
-            Console.WriteLine("Total Employee Wage :" + TotalEmpWage);
+            int TotalEmpwageHrs = TotalEmpHrs * EmpRatePerHour;
+            Console.WriteLine("Total Employee Wage :" + TotalEmpwageHrs);
         }
     }
 }
