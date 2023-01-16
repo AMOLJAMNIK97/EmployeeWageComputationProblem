@@ -10,8 +10,9 @@ namespace EmployeeWag
     {
         static void Main(string[] args)
         {
-            Employee Empy = new Employee();
-            Empy.CheckEmployeeWage();
+            Employee employee =new Employee();
+            employee.ComputEmWage("Dmart", 20, 25, 30);
+            employee.ComputEmWage("Tata", 10, 4, 20);
         }
     }
 }
