@@ -10,9 +10,13 @@ namespace EmployeeWag
     {
         static void Main(string[] args)
         {
-            Employee employee =new Employee();
-            employee.ComputEmWage("Dmart", 20, 25, 30);
-            employee.ComputEmWage("Tata", 10, 4, 20);
+            EmpWageBuilderObjects DMart = new EmpWageBuilderObjects("D'Mart", 20, 2, 10);
+            EmpWageBuilderObjects Tata = new EmpWageBuilderObjects("Tata", 10, 4, 20);
+            DMart.CmputWage();
+            Console.WriteLine(DMart.toString());
+            Tata.CmputWage();
+            Console.WriteLine(Tata.toString());
+            
         }
     }
 }
