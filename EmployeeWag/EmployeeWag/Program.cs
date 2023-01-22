@@ -10,13 +10,15 @@ namespace EmployeeWag
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderObjects DMart = new EmpWageBuilderObjects("D'Mart", 20, 2, 10);
-            EmpWageBuilderObjects Tata = new EmpWageBuilderObjects("Tata", 10, 4, 20);
-            DMart.CmputWage();
-            Console.WriteLine(DMart.toString());
-            Tata.CmputWage();
-            Console.WriteLine(Tata.toString());
-            
+            Console.WriteLine("Welcome To The Employee Wage Calculation Program");
+            //WageComputation attendancecheck = new WageComputation();
+            //attendancecheck.EmployeeAttendence();
+            WageComputation empwagecomputation = new WageComputation(2);
+            empwagecomputation.AddCompany("Reliance", 20, 8, 4, 100, 20);
+            empwagecomputation.EmpWageCalculation("reliance");
+            empwagecomputation.AddCompany("Tata", 25, 9, 5, 90, 24);
+            empwagecomputation.EmpWageCalculation("tata");
+            empwagecomputation.DisplayWage();
         }
     }
 }
