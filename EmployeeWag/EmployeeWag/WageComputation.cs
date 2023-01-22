@@ -82,12 +82,11 @@ namespace EmployeeWag
             ArrayListIndex++;
             //Console.WriteLine("Monthly Wage Of Employee in {0} is {1}", COMPANY_NAME, monthlyWage);
         }
-        public void DisplayWage()
+        public void DisplayWage(string name)
         {
-            for (int i = 0; i < CompanyList.Count; i += 2)
-            {
-                Console.WriteLine("Monthly Wage for {0} is {1} ", CompanyList[i], CompanyList[i + 1]);
-            }
+            int index = CompanyList.IndexOf(name.ToLower());
+            Console.WriteLine("\nMonthly Wage for {0} with\n Daily Wage = {1} is {2}\n", CompanyList[index], CompanyList[index + 1], CompanyList[index + 2]);
+
         }
     }
 }

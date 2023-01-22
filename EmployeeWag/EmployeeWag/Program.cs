@@ -18,7 +18,9 @@ namespace EmployeeWag
             employeeComputation.AddCompany("MAHINDRA", 30, 8, 4, 100, 20);
             employeeComputation.EmpWageCalculation("MAHINDRA");
 
-            employeeComputation.DisplayWage();
+            Console.Write("Enter the name of the company you want to check the total wage : ");
+            string name = Console.ReadLine();
+            employeeComputation.DisplayWage(name);
         }
     }
 }
